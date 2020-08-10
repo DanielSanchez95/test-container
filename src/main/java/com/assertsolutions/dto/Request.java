@@ -2,8 +2,6 @@ package com.assertsolutions.dto;
 
 import java.util.Date;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -12,28 +10,27 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-@XmlRootElement
 @JsonAutoDetect
 @JsonSerialize
 @ApiModel(description = "Request DTO Object")
 public class Request {
-    
-    @JsonProperty(value = "id")
-    @ApiModelProperty(dataType = "String")
-    private String id;
-    
-    @JsonProperty(value = "nombre")
-    @ApiModelProperty(dataType = "String")
-    private String name;
-    
-    @JsonProperty(value = "duracion")
-    @ApiModelProperty(dataType = "String")
-    private String duration;
-    
-    @JsonProperty(value = "fechaInicio")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    @ApiModelProperty(dataType = "Date")
-    private Date initDate;
+
+	@JsonProperty(value = "id")
+	@ApiModelProperty(dataType = "String")
+	private String id;
+
+	@JsonProperty(value = "nombre")
+	@ApiModelProperty(dataType = "String")
+	private String name;
+
+	@JsonProperty(value = "duracion")
+	@ApiModelProperty(dataType = "String")
+	private String duration;
+
+	@JsonProperty(value = "fechaInicio")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+	@ApiModelProperty(dataType = "Date")
+	private Date initDate;
 
 	/**
 	 * @return the id
@@ -90,7 +87,5 @@ public class Request {
 	public void setInitDate(Date initDate) {
 		this.initDate = initDate;
 	}
-
-    
 
 }
